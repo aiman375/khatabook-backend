@@ -10,7 +10,9 @@ const app = express();
 const PORT = 5000;
 const SECRET = 'khatabook_secret_key';
 
-app.use(cors());
+app.use(cors({
+  origin: "https://khatabook-fronteend.vercel.app"
+}));
 app.use(bodyParser.json());
 
 const dbPath = path.join(__dirname, 'db', 'khatabook.db');
